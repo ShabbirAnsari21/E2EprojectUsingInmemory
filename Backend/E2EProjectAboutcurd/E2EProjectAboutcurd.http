@@ -1,0 +1,6 @@
+@E2EProjectAboutcurd_HostAddress = http://localhost:5072
+
+GET {{E2EProjectAboutcurd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
