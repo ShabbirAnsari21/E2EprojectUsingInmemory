@@ -1,0 +1,30 @@
+<!-- src/app/components/inventory/inventory.component.html -->
+
+<div class="inventory-container">
+  <div class="inventory-box">
+    <h2>Inventory List</h2>
+    <ul class="inventory-list">
+      <!-- Loop through inventories array and display inventory details -->
+      <li *ngFor="let inventory of inventories">
+        <strong>{{ inventory.inventoryName }}</strong>
+        <button (click)="viewProducts(inventory.id)">View Products</button>
+      </li>
+    </ul>
+
+    <h2>Add New Inventory</h2>
+    <!-- Input for adding new inventory -->
+    <input
+      type="text"
+      [(ngModel)]="newInventoryName"
+      placeholder="Inventory Name"
+    />
+    <button (click)="addInventory()">Add Inventory</button>
+
+    <h3>Products</h3>
+    <ul class="product-list" *ngIf="products.length > 0">
+      <li *ngFor="let product of products">
+        {{ product.name }} - Quantity: {{ product.quantity }}
+      </li>
+    </ul>
+  </div>
+</div>
